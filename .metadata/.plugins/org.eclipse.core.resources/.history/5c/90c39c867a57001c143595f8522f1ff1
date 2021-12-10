@@ -1,0 +1,32 @@
+package com.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.entity.User;
+
+public class UserDAOImpl implements UserDAO {
+
+	private Connection conn;
+
+	public UserDAOImpl(Connection conn) {
+		super();
+		this.conn = conn;
+	}
+
+	public boolean userRegister(User us) {
+		
+		boolean status = false;
+		
+		try {
+			 String sql = "INSERT INTO user(name,email,phno,password)";
+			 PreparedStatement ps = conn.prepareStatement(null)
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return status;
+	}
+
+}

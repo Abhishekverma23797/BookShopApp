@@ -1,0 +1,66 @@
+package com.DAO;
+
+import java.sql.Connection;
+
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import com.entity.BookDetails;
+
+public class BookDAOImpl implements BookDAO {
+
+	private Connection connection;
+
+	public BookDAOImpl(Connection connection) {
+		super();
+		this.connection = connection;
+	}
+
+	public boolean addBooks(BookDetails bookDetails) {
+
+		boolean status = false;
+
+		try {
+
+			String query = "INSERT INTO  book_details (bookName, author, price, booksCategory, status, photo, user_email) VALUES(?,?,?,?,?,?,?)";
+			
+		    PreparedStatement ps = connection.prepareStatement(query);
+		    
+		    ps.setString(1, bookDetails.getBookName());
+		    ps.setString(2, bookDetails.getAuthor());
+		    ps.setDouble(3, bookDetails.getPrice());
+		    ps.setString(4, bookDetails.getBooksCategory());
+		    ps.setString(5, bookDetails.getStatus());
+		    ps.setString(6, bookDetails.getPhoto());
+		    ps.setString(7, bookDetails.getUser_email());
+		    
+		    int update = ps.executeUpdate();
+		    
+		    if(update==1) {
+		    	status = true;
+		    }
+		    
+		    
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		return status;
+	}
+
+	public List<BookDetails> getAllBook() {
+		// TODO Auto-generated method stub
+		List<BookDetails> listBook = new ArrayList<Boo>
+		try {
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	
+
+}

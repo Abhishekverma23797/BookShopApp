@@ -1,0 +1,12 @@
+package com.DB;
+
+import java.sql.Connection;
+
+public class DBConnect {
+	
+	private Connection con;
+	
+	public Connection getConn() {
+		return con;
+	}
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+F:\Ebook-Shop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3962383802.index
+\Ebook-App\src\main\java
+F:\Ebook-Shop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2124335275.index
+\Ebook-App\src\main\resources
+F:\Ebook-Shop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3248506689.index
+\Ebook-App\src\main\java

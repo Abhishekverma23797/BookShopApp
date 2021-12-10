@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ebook: Index</title>
+<%@include file="All_Component/AllCss.jsp"%>
+
+<style type="text/css">
+.back-img {
+	background: url("img/bb.jpg");
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
+	<%@include file="All_Component/navbar.jsp"%>
+
+	<div class="container-fluid back-img">
+		<h2 class="text-center">Book Shop</h2>
+	</div>
+
+	<div class="container-fluid">
+		<h3>Recent Book</h3>
+		<div class="row">
+			<div class="col-md-3">
+			
+				<div class="card-body">
+					<img alt="bookimg" src="bookimg/b1.jpg">
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+</body>
+</html>
