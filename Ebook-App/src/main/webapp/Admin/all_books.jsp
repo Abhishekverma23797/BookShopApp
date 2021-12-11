@@ -46,8 +46,8 @@
 				<td><%=b.getPrice()%></td>
 				<td><%=b.getBooksCategory()%></td>
 				<td><%=b.getStatus()%></td>
-				<td><a href="#" class="btn btn-sm btn-secondary">Edit</a> <a
-					href="#" class="btn btn-sm btn-danger">Delete</a></td>
+				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>" class="btn btn-sm btn-secondary">Edit</a> 
+				<a	href="#" class="btn btn-sm btn-danger">Delete</a></td>
 			</tr>
 
 			<%
