@@ -101,7 +101,6 @@ public class BookDAOImpl implements BookDAO {
 
 			while (rs.next()) {
 
-				
 				b = new BookDetails();
 				b.setBookId(rs.getInt(1));
 				b.setBookName(rs.getNString(2));
@@ -121,4 +120,32 @@ public class BookDAOImpl implements BookDAO {
 		return b;
 	}
 
+	public boolean updateBooks(BookDetails bookDetails) {
+		boolean status = false;
+
+		try {
+			String query = "UPDATE book_details  SET bookName=?,author=? ,price=?,status=? WHERE bookID = ?";
+		
+
+			PreparedStatement ps = connection.prepareStatement(query);
+			
+			ps.setString(1, bookDetails.getBookName());
+			ps.setString(2, bookDetails.getAuthor());
+			ps.setDouble(3, bookDetails.getPrice());
+			ps.setString(4, bookDetails.getStatus());
+			ps.setInt(5, bookDetails.getBookId());
+			
+			  int success = ps.executeUpdate();
+			  System.out.println(success);
+			  if(success==1) {
+				  status = true;
+			  }
+			
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		e.printStackTrace();
+		}
+		return status;
+	}
 }

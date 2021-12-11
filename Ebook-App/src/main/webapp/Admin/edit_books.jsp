@@ -23,44 +23,35 @@
 
 					<div class="card-body">
 						<h4 class="text-center">Edit Book</h4>
-						<c:if test="${not empty Success}">
-
-							<p class="text-center text-success">${Success}</p>
-							<c:remove var="Success" scope="session" />
-						</c:if>
-
-						<c:if test="${not empty Faild}">
-
-							<p class="text-center text-danger">${Faild}</p>
-							<c:remove var="Faild" scope="session" />
-						</c:if>
+						
 
 						<%
 						int id = Integer.parseInt(request.getParameter("id"));
 						BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
 						BookDetails b = dao.getBookbyId(id);
 						%>
-						<form action="../add_books" method="post"
-							enctype="multipart/form-data">
+						<form action="../editbooks" method="post" >
+							<input type="hidden" name="id" value= "<%=b.getBookId() %>">
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Book
 									Name</label> <input type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
-									required="required" name="bookname" value="<%=b.getBookName() %>">
+									required="required" name="bookname"
+									value="<%=b.getBookName()%>">
 
 							</div>
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Author
 									Name</label> <input type="text" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
-									required="required" name="author" value="<%=b.getAuthor() %>">
+									required="required" name="author" value="<%=b.getAuthor()%>">
 
 							</div>
 							<div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Price</label>
 								<input type="number" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
-									required="required" name="price" value="<%=b.getPrice() %>">
+									required="required" name="price" value="<%=b.getPrice()%>">
 
 							</div>
 							<div class="mb-3">
@@ -78,14 +69,16 @@
 									<%
 									if ("Active".equals(b.getStatus())) {
 									%>
+									<option value="Active">Active</option>
 									<option value="Inactive">Inactive</option>
 									<%
 									} else {
 									%>
+									<option value="Inactive">Inactive</option>
 									<option value="Active">Active</option>
 									<%
 									}
-									%> 
+									%>
 
 
 

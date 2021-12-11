@@ -1,0 +1,39 @@
+package com.admin.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.entity.BookDetails;
+
+@WebServlet("/editbooks")
+public class EditBooks extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		try {
+			int id = Integer.parseInt(request.getParameter("id"));
+			String bookName = request.getParameter("bookname");
+			String author = request.getParameter("author");
+			Double price = Double.parseDouble(request.getParameter("price"));
+			String status = request.getParameter("bstatus");
+			
+			
+			BookDetails bookDetails = new BookDetails();
+			
+			bookDetails.setBookId(id);
+			bookDetails.setBookName(bookName);
+			bookDetails.setAuthor(author);
+			bookDetails.setPrice(price);
+			bookDetails.setStatus(status);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -4,6 +4,8 @@
 <%@page import="com.entity.BookDetails"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,17 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<h3 class="text-center">Hello Admin</h3>
+	<c:if test="${not empty Success}">
 
+		<p class="text-center text-success">${Success}</p>
+		<c:remove var="Success" scope="session" />
+	</c:if>
+
+	<c:if test="${not empty Faild}">
+
+		<p class="text-center text-danger">${Faild}</p>
+		<c:remove var="Faild" scope="session" />
+	</c:if>
 	<table class="table table-striped table-hover">
 		<thead class="table-dark">
 			<tr>
@@ -39,15 +51,15 @@
 				<td><%=b.getBookId()%>
 				</th>
 				<td><img src="../bookimg/<%=b.getPhoto()%>"
-					style="wdith: 50px; height: 50px">
-				</td>
+					style="wdith: 50px; height: 50px"></td>
 				<td><%=b.getBookName()%></td>
 				<td><%=b.getAuthor()%></td>
 				<td><%=b.getPrice()%></td>
 				<td><%=b.getBooksCategory()%></td>
 				<td><%=b.getStatus()%></td>
-				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>" class="btn btn-sm btn-secondary">Edit</a> 
-				<a	href="#" class="btn btn-sm btn-danger">Delete</a></td>
+				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>"
+					class="btn btn-sm btn-secondary">Edit</a> <a href="#"
+					class="btn btn-sm btn-danger">Delete</a></td>
 			</tr>
 
 			<%
