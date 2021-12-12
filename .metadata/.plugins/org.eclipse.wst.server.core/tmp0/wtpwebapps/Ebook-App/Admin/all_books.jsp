@@ -18,13 +18,13 @@
 	<h3 class="text-center">Hello Admin</h3>
 	<c:if test="${not empty Success}">
 
-		<p class="text-center text-success">${Success}</p>
+		<h4 class="text-center text-success">${Success}</h4>
 		<c:remove var="Success" scope="session" />
 	</c:if>
 
 	<c:if test="${not empty Faild}">
 
-		<p class="text-center text-danger">${Faild}</p>
+		<h4 class="text-center text-danger">${Faild}</h4>
 		<c:remove var="Faild" scope="session" />
 	</c:if>
 	<table class="table table-striped table-hover">
@@ -58,7 +58,8 @@
 				<td><%=b.getBooksCategory()%></td>
 				<td><%=b.getStatus()%></td>
 				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>"
-					class="btn btn-sm btn-secondary">Edit</a> <a href="#"
+					class="btn btn-sm btn-secondary">Edit</a> <a
+					href="../delete_books?id=<%=b.getBookId()%>"
 					class="btn btn-sm btn-danger">Delete</a></td>
 			</tr>
 

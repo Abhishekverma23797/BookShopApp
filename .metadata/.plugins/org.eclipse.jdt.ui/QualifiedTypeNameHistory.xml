@@ -11,15 +11,15 @@
     <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="com.DAO.BookDAOImpl"/>
-    <fullyQualifiedTypeName name="com.DB.DBConnect"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
-    <fullyQualifiedTypeName name="com.entity.BookDetails"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="com.entity.BookDetails"/>
+    <fullyQualifiedTypeName name="com.DAO.BookDAOImpl"/>
+    <fullyQualifiedTypeName name="com.DB.DBConnect"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>
