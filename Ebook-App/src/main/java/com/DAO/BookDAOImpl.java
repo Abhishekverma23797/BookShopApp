@@ -148,4 +148,26 @@ public class BookDAOImpl implements BookDAO {
 		}
 		return status;
 	}
+
+	public boolean deleteBooks(int id) {
+		// TODO Auto-generated method stub
+		boolean status = false;
+		try {
+				
+			String query = "DELETE FROM book_details WHERE  bookID = ?";
+			PreparedStatement ps = connection.prepareStatement(query);
+			
+			ps.setInt(1, id);
+			
+			int success = ps.executeUpdate();
+			
+			if(success==1) {
+				status = true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return status;
+	}
 }

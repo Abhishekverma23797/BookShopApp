@@ -13,5 +13,7 @@ public interface BookDAO {
    public BookDetails getBookbyId(int id);
    
    public boolean updateBooks(BookDetails  bookDetails);
+   
+   public boolean deleteBooks(int id);
 	
 }
